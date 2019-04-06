@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentRegister">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#b8f9f9"
+        android:paddingTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="Enter Your Details"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/emailStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:hint="Email ID"
+                android:textSize="20sp"
+                android:inputType="textEmailAddress"
+                android:textColor="#000"/>
+
+            <EditText
+                android:id="@+id/passwordStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:hint="Password"
+                android:textSize="20sp"
+                android:inputType="textEmailAddress"
+                android:textColor="#000"/>
+
+            <EditText
+                android:id="@+id/phoneStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:hint="Mobile Number"
+                android:textSize="20sp"
+                android:inputType="textEmailAddress"
+                android:textColor="#000"/>
+
+
+
+            <EditText
+                android:id="@+id/nameStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="Your Name"
+                android:paddingTop="30dp"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/rollNoStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="Roll Number"
+                android:paddingTop="30dp"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/departmentStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:entries="@array/department"
+                android:paddingTop="30dp"
+                android:paddingBottom="15dp" />
+
+            <Spinner
+                android:id="@+id/semesterStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:entries="@array/Semester"
+                android:paddingTop="20dp" />
+
+            <ListView
+                android:id="@+id/courseList"
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:visibility="gone"
+                >
+
+            </ListView>
+
+            <Spinner
+                android:id="@+id/selectelective1"
+                android:visibility="gone"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+            <Spinner
+                android:id="@+id/selecetelective2"
+                android:visibility="gone"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+            <Spinner
+                android:id="@+id/selectelective3"
+                android:visibility="gone"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+
+
+            <Spinner
+                android:id="@+id/hsselective"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/HSS_Elective"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#000099"
+                android:textSize="18sp"
+                android:text="Refer to the Course list above and Enter The backlogs and their credits (IF ANY)"/>
+
+
+            <EditText
+                android:id="@+id/backlog1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:paddingBottom="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:hint="Enter Backlog 1"/>
+
+            <EditText
+                android:id="@+id/backlog2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:hint="Enter Backlog 2"/>
+
+            <EditText
+                android:id="@+id/backlog3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:hint=" Enter Backlog 3"/>
+
+            <EditText
+                android:id="@+id/creditbacklog1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="Enter Backlog 3 credits"/>
+
+            <EditText
+                android:id="@+id/creditbacklog2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="Enter Backlog 3 credits"/>
+
+            <EditText
+                android:id="@+id/creditbacklog3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint=" Enter Backlog 3 credits"/>
+
+            <TextView
+                android:id="@+id/Register"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/round_textview"
+                android:text="Register Now"
+                android:textSize="20sp"
+                android:onClick="register"
+                android:textColor="#fff"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <array name="Semester">
+        <item>Choose Your Semester</item>
+        <item>sem1</item>
+        <item>sem2</item>
+        <item>sem3</item>
+        <item>sem4</item>
+        <item>sem5</item>
+        <item>sem6</item>
+        <item>sem7</item>
+        <item>sem8</item>
+    </array>
+
+    <array name="department">
+        <item>Select Your Department</item>
+        <item>CSE</item>
+        <item>ECE</item>
+    </array>
+
+    <array name="CSE_Electives">
+        <item>Choose Your Elective</item>
+        <item>Number Theory in Cryptography</item>
+        <item>Parallel Programming</item>
+        <item>Image and Video Processing</item>
+        <item>Advanced Computer Architecture</item>
+        <item>Algoritmic Game Theory</item>
+        <item>Ubiquitous Computing</item>
+        <item>Financial Engineering</item>
+        <item>Network Science</item>
+    </array>
+
+    <array name="ECE_Electives">
+        <item>Choose Your Elective</item>
+        <item>Detection and Estimation Theory</item>
+        <item>Wireless Sensor Networks</item>
+        <item>VLSI Technology</item>
+        <item>Antennas and Wave Propagation</item>
+        <item>Advanced Semiconductor Devices</item>
+        <item>Communication Systems</item>
+        <item>Digital Control Systems</item>
+        <item>Pattern Recognition and Machine Learning</item>
+        <item>Artificial Intelligence</item>
+        <item>Optimization Techniques</item>
+        <item>Advanced Control Systems</item>
+        <item>Image Processing</item>
+        <item>Data Converteres</item>
+    </array>
+
+    <array name="HSS_Elective">
+        <item>Choose Your Elective</item>
+        <item>English</item>
+        <item>Economics</item>
+        <item>Introduction to Linguistics</item>
+        <item>Language To Society</item>
+        <item>Science Fiction</item>
+        <item>Introduction to Politics</item>
+        <item>Macroeconomic Problems and Policies</item>
+        <item>Language, Cognition and Culture</item>
+        <item>Indian Writing in English</item>
+        <item>Science, Technology and Society</item>
+        <item>Consumer Behaviour and Welfare Economics</item>
+        <item>Understanding Democracy and Governance in India</item>
+        <item>Science Fiction II</item>
+        <item>Language, Cognition and Culture II</item>
+    </array>
+
+</resources>

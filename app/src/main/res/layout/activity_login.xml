@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp">
+
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        app:srcCompat="@drawable/iiitg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:background="@drawable/round_textview"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="16.66"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Student's Login"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/emailStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="16.66"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingTop="20dp" />
+
+        <EditText
+            android:id="@+id/passwordstudent"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="16.66"
+            android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="129dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="16.66"
+            android:background="@drawable/round_textview"
+            android:gravity="center"
+            android:text="Login"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="16.66"
+            android:gravity="center"
+            android:onClick="studentRegister"
+            android:text="Students Register Here!"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="16.66"
+            android:gravity="center"
+            android:onClick="instructorLogin"
+            android:text="Goto Instructor's  Login"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
