@@ -12,6 +12,12 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,11 +43,15 @@ public class StudentRegister extends AppCompatActivity {
 
     ArrayAdapter<String> adapter;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_register);
         listView = findViewById(R.id.courseList);
+
+        mAuth = FirebaseAuth.getInstance();    //Firebase Authentication
 
         emailStudent = findViewById(R.id.emailStudent);
         passwordStudent = findViewById(R.id.passwordStudent);
@@ -191,6 +201,19 @@ public class StudentRegister extends AppCompatActivity {
                 });
             //}
 
+        selecthsselective.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0) return;
+                HSSelective = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
 
@@ -302,7 +325,45 @@ public class StudentRegister extends AppCompatActivity {
             return;
         }
 
+        if(password.length() < 6) {
+            passwordStudent.setError("Minimum length of password is 6");
+            passwordStudent.requestFocus();
+            return;
+        }
 
+        final Student student = new Student(email,phone,name,roll, department, selectedSemester, courses, elective1, elective2, elective3, HSSelective, bklg1, bklg2, bklg3);
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(),"Registration Successful",Toast.LENGTH_LONG).show();
+                    signIn(student);
+                } else if(task.getException() instanceof FirebaseAuthUserCollisionException) {
+                    Toast.makeText(getApplicationContext(), "Email already registered", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+
+
+
+    }
+
+    private void signIn (final Student student) {
+        mAuth.signInWithEmailAndPassword(emailStudent.getText().toString().trim(), passwordStudent.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    FirebaseUser usr = FirebaseAuth.getInstance().getCurrentUser();
+
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+                    ref.child(usr.getUid()).setValue(student);
+
+                }
+            }
+        });
     }
 
 
