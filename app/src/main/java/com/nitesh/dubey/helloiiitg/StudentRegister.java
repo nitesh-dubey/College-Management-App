@@ -1,5 +1,6 @@
 package com.nitesh.dubey.helloiiitg;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -86,6 +87,8 @@ public class StudentRegister extends AppCompatActivity {
                 if(position == 0) return;
                 department = parent.getItemAtPosition(position).toString();
             }
+
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -360,6 +363,9 @@ public class StudentRegister extends AppCompatActivity {
 
                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
                     ref.child(usr.getUid()).setValue(student);
+                    Intent intent = new Intent(getApplicationContext(),StudentActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
 
                 }
             }
